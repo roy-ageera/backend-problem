@@ -13,11 +13,15 @@ const connectDB = async () => {
     console.log(`MongoDB connected: ${conn.connection.host}`);
 
     // Add listener for SIGINT event to close the database connection
-    process.on('SIGINT', () => {
-      mongoose.connection.close(() => {
+    process.on('SIGINT', async () => {
+      try {
+        await mongoose.connection.close();
         console.log('MongoDB connection closed');
         process.exit(0);
-      });
+      } catch (error) {
+        console.error(`Error: ${error.message}`);
+        process.exit(1);
+      }
     });
   } catch (error) {
     console.error(`Error: ${error.message}`);
