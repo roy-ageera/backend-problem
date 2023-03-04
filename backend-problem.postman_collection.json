@@ -1,0 +1,202 @@
+{
+  "info": {
+    "_postman_id": "a910d28a-1f76-4464-8900-ee976539056c",
+    "name": "backend-problem",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "siteRoutes",
+      "item": [
+        {
+          "name": "createSite",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"id\": 1,\r\n    \"battery\": {\r\n        \"vendor\": \"Tesla\",\r\n        \"capacity_kwh\": 3100,\r\n        \"max_power_kw\": 400\r\n    },\r\n    \"production\": {\r\n        \"pv\": {\r\n            \"units\": 1,\r\n            \"kilowatt_peak\": 500\r\n        },\r\n        \"bio\": {\r\n            \"units\": 0\r\n        },\r\n        \"cro\": {\r\n            \"units\": 2,\r\n            \"kilowatt_peak\": 800\r\n        }\r\n    }\r\n}\r\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/sites",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "sites"]
+            },
+            "description": "creates site"
+          },
+          "response": []
+        },
+        {
+          "name": "getSiteById",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/api/sites/603ebd5ac9c5b5b5c23c5f0f",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "sites", "603ebd5ac9c5b5b5c23c5f0f"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "getAllSites",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/api/sites",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "sites"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "updateSite",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/api/sites/603ebd5ac9c5b5b5c23c5f0f",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "sites", "603ebd5ac9c5b5b5c23c5f0f"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "liveDataRoutes",
+      "item": [
+        {
+          "name": "getLatestLiveData",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/api/live-data",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "live-data"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "createLiveData",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/live-data",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "live-data"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "configRoutes",
+      "item": [
+        {
+          "name": "getConfigById",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/api/configs/6401ce5852d252b36b0569bd",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "configs", "6401ce5852d252b36b0569bd"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "getAllConfigs",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/api/configs",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "configs"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "createConfig",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/configs",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "configs"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "updateConfig",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/api/configs/6401ce5852d252b36b0569bd",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "configs", "6401ce5852d252b36b0569bd"]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
