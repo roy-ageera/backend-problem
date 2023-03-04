@@ -1,0 +1,40 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Site {
+  name           String           @unique @db.VarChar(255)
+  location       String           @db.VarChar(50)
+  id             Int              @id @default(autoincrement())
+  configuration  Configuration?
+  historicalData HistoricalData[]
+}
+
+model Configuration {
+  id         Int  @id @unique
+  site       Site @relation(fields: [id], references: [id])
+  battery    Json
+  production Json
+}
+
+model HistoricalData {
+  id               Int      @id @default(autoincrement())
+  site             Site     @relation(fields: [siteId], references: [id])
+  siteId           Int
+  createdAt        DateTime
+  timeStamp        String
+  soc              Int
+  load_kwh         Float
+  net_load_kwh     Float
+  pv_notification  Boolean
+  bio_notification Boolean
+  cro_notification Boolean
+}
