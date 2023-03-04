@@ -3,7 +3,9 @@ const router = express.Router();
 const liveDataController = require('../controllers/liveDataController');
 const { validateLiveData } = require('../middleware/validate');
 
-router.get('/', liveDataController.getLatestLiveData);
-router.post('/', validateLiveData, liveDataController.createLiveData);
+router
+  .route('/')
+  .get(liveDataController.getLatestLiveData)
+  .post(validateLiveData, liveDataController.createLiveData);
 
 module.exports = router;
