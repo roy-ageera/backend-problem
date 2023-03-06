@@ -1,0 +1,12 @@
+Flask == 2.0.1
+Jinja2 == 3.0.1
+MarkupSafe == 2.0.1
+Werkzeug == 2.0.1
+click == 8.0.1
+colorama == 0.4.4
+itsdangerous == 2.0.1
+pip == 21.1.2
+setuptools == 57.0.0
+tinydb == 4.4.0
+tinyrecord == 0.2.0
+
