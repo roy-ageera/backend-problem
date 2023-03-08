@@ -1,0 +1,27 @@
+<html lang="en">
+
+<body>
+<form method="post">
+            <h1>new configuration</h1>
+            <h2>battery</h2>
+            <p>
+            <input type=text name=battery_vendor value={{conf["battery"]["vendor"]}}>
+            <input type=text name=battery_capacity_kwh value={{conf["battery"]["capacity_kwh"]}}>
+            <input type=text name=battery_max_power_kw value={{conf["battery"]["max_power_kw"]}}>
+            <p>
+            <h2>production</h2>
+            <p>
+            <p>pv</p>
+            <input type=text name=pv_units value={{conf["production"]["pv"]["units"]}}>
+            <input type=text name=pv_kwp value={{conf["production"]["pv"]["kwp"]}}>
+            <p>bio</p>
+            <input type=text name=bio_units value={{conf["production"]["bio"]["units"]}}>
+            <p>cro</p>
+            <input type=text name=cro_units value={{conf["production"]["cro"]["units"]}}>
+            <input type=text name=cro_kwp value={{conf["production"]["cro"]["kwp"]}}>
+            <p><input type=submit value=save name="submit"></p>
+            </form>
+</body>
+</html>
+
+
